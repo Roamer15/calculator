@@ -1,7 +1,5 @@
 const display = document.getElementById('display-screen')
 
-const keyPressed = document.querySelectorAll('numbers-et-al')
-
 function displayOnScreen (input) {
   display.value += input
 }
