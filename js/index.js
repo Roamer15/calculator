@@ -173,3 +173,10 @@ function binaryConversion () {
     displayScreen.value = 'Error' // Show an error if the input is invalid
   }
 }
+
+displayOnScreen()
+switchPercent()
+binaryConversion()
+switchSign()
+calculate()
+clearScreen()
