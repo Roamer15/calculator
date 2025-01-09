@@ -105,8 +105,7 @@ function switchPercent () {
 
   if (isNaN(currentValue)) {
     display.value = 'Error'
-  }
-  else {
+  } else {
     display.value = currentValue / 100
   }
 }
