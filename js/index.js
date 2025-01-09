@@ -81,13 +81,6 @@ function compute (tokens) {
   tokens.forEach(token => {
     if (typeof token === 'number') {
       values.push(token)
-    } else if (token === '(') {
-      operators.push(token)
-    } else if (token === ')') {
-      while (operators.length && operators[operators.length - 1] !== '(') {
-        applyOperator()
-      }
-      operators.pop() // Remove the '('
     } else if (['+', '-', '*', '/'].includes(token)) {
       while (
         operators.length &&
@@ -106,9 +99,36 @@ function compute (tokens) {
   return values[0]
 }
 
+// Function to calculate the percentage of the current number (% button)
+function switchPercent () {
+  const currentValue = display.value
+
+  if (isNaN(currentValue)) {
+    display.value = 'Error'
+  } else {
+    display.value = currentValue / 100
+  }
+}
+
+// Function to switch the sign of the current number (+/- button)
+function switchSign () {
+  const currentValue = display.value
+
+  // If the value is a valid number, toggle its sign
+  if (currentValue) {
+    if (currentValue.startsWith('-')) {
+      display.value = currentValue.substring(1) // Remove the negative sign
+    } else {
+      display.value = '-' + currentValue // Add the negative sign
+    }
+  }
+}
+
 // Attach these functions to your buttons (if using event listeners)
 
 displayOnScreen()
 clearScreen()
 calculate()
 binaryConversion()
+switchPercent()
+switchSign()
