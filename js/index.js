@@ -81,13 +81,6 @@ function compute (tokens) {
   tokens.forEach(token => {
     if (typeof token === 'number') {
       values.push(token)
-    } else if (token === '(') {
-      operators.push(token)
-    } else if (token === ')') {
-      while (operators.length && operators[operators.length - 1] !== '(') {
-        applyOperator()
-      }
-      operators.pop() // Remove the '('
     } else if (['+', '-', '*', '/'].includes(token)) {
       while (
         operators.length &&
@@ -110,9 +103,11 @@ function compute (tokens) {
 function switchPercent () {
   const currentValue = display.value
 
-  // If the value is a valid number, calculate its percentage
-  if (currentValue) {
-    display.value = eval(currentValue) / 100 // Calculate the percentage
+  if (isNaN(currentValue)) {
+    display.value = 'Error'
+  }
+  else {
+    display.value = currentValue / 100
   }
 }
 
