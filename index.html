@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
 </head>
 <body>
-    
+   
+    <div class="calculator-box">
+        <h1>Calculator App</h1>
+        <input id="display-screen" readonly>
+        <div class="keys">
+            <button class="numbers-et-al opps" onclick="clearScreen()">AC</button>
+            <button class="numbers-et-al opps" onclick="switchSign()">+/-</button>
+            <button class="numbers-et-al opps" onclick="switchPercent()">%</button>
+            <button class="numbers-et-al opp" onclick="displayOnScreen('÷')">÷</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('7')">7</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('8')">8</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('9')">9</button>
+            <button class="numbers-et-al opp" onclick="displayOnScreen('*')">&#215</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('4')">4</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('5')">5</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('6')">6</button>
+            <button class="numbers-et-al opp" onclick="displayOnScreen('-')">-</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('1')">1</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('2')">2</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('3')">3</button>
+            <button class="numbers-et-al opp" onclick="displayOnScreen('+')">+</button>
+            <button class="numbers-et-al num" id="zero" onclick="displayOnScreen('0')">0</button>
+            <button class="numbers-et-al num" onclick="displayOnScreen('.')">.</button>
+            <button class="binary" onclick="binaryConversion()">Bin</button>
+            <button class="numbers-et-al opp" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
 </body>
 </html>
